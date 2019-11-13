@@ -24,7 +24,7 @@ class SumCalculatorTest extends \PHPUnit_Framework_TestCase
     /**
     * @test
     */
-    public function object_can_created()
+    public function objectCanCreated()
     {
         $sumCalculator = new SumCalculator();
         $this->assertInstanceOf('Dilab\Order\SumCalculator', $sumCalculator);
@@ -33,7 +33,7 @@ class SumCalculatorTest extends \PHPUnit_Framework_TestCase
     /**
     * @test
     */
-    public function should_sum_price()
+    public function shouldSumPrice()
     {
         $items = [
             ['price' => 100],
@@ -47,7 +47,7 @@ class SumCalculatorTest extends \PHPUnit_Framework_TestCase
     /**
     * @test
     */
-    public function empty_items_should_return_zero()
+    public function emptyItemsShouldReturnZero()
     {
         $items = [];
         $result = $this->SumCalculator->total($items);
