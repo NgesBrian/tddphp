@@ -6,7 +6,7 @@ The project has three folders.
 It holds the php classes that I want to test. In this case, I have a sum clas with two functions that sum up items in an array add that adds two numbers
 
 # tests
-It contains the written test to test the functions in the above class. i have demonstrated 6 asserts
+It contains the written tests class to test the functions in the above class. i have demonstrated 6 asserts
 
 # Vendor
 It contains bin and related installations of phpunit gotten from composer install. I use PHPUnit version 5.
