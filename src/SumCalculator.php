@@ -1,7 +1,7 @@
 <?php
 
 namespace Dilab\Order;
-class PriceCalculator
+class SumCalculator
 {
 	//sum items in an array an return results
     public function total($items)

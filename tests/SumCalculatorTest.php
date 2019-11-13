@@ -1,22 +1,24 @@
 <?php
 
 namespace Dilab\Order\Test;
-use Dilab\Order\PriceCalculator;
+use Dilab\Order\SumCalculator;
  
-class PriceCalculatorTest extends \PHPUnit_Framework_TestCase
+class SumCalculatorTest extends \PHPUnit_Framework_TestCase
 {
-    private $PriceCalculator;
+    private $SumCalculator;
  
+    //this function is to initiliaze the test 
     public function setUp()
     {
         parent::setUp();
-        $this->PriceCalculator = new PriceCalculator();
+        $this->SumCalculator = new SumCalculator();
     }
- 
+    
+    //this function is to clear space when the test is done running
     public function tearDown()
     {
         parent::tearDown();
-        unset($this->PriceCalculator);
+        unset($this->SumCalculator);
     }
  
     /**
@@ -24,8 +26,8 @@ class PriceCalculatorTest extends \PHPUnit_Framework_TestCase
     */
     public function object_can_created()
     {
-        $priceCalculator = new PriceCalculator();
-        $this->assertInstanceOf('Dilab\Order\PriceCalculator', $priceCalculator);
+        $sumCalculator = new SumCalculator();
+        $this->assertInstanceOf('Dilab\Order\SumCalculator', $sumCalculator);
     }
  
     /**
@@ -38,7 +40,7 @@ class PriceCalculatorTest extends \PHPUnit_Framework_TestCase
             ['price' => 200],
         ];
  
-        $result = $this->PriceCalculator->total($items);
+        $result = $this->SumCalculator->total($items);
         $this->assertEquals(300, $result);
     }
  
@@ -48,7 +50,7 @@ class PriceCalculatorTest extends \PHPUnit_Framework_TestCase
     public function empty_items_should_return_zero()
     {
         $items = [];
-        $result = $this->PriceCalculator->total($items);
+        $result = $this->SumCalculator->total($items);
         $this->assertEquals(0, $result);
     }
 
@@ -68,7 +70,7 @@ class PriceCalculatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testAdd($a, $b, $expected)
     {
-        $result = $this->PriceCalculator->add($a, $b);
+        $result = $this->SumCalculator->add($a, $b);
         $this->assertEquals($expected, $result);
     }
 }
